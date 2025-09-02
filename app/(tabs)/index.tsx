@@ -1,16 +1,19 @@
-import { Text, View } from "react-native";
+import { Image } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { s } from "../../App.styles";
+import Human from "../components/Human/Human";
 
 export default function HomeScreen() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={s.container}>
-          <View style={s.box}>
-            <Text>Box 1 Text</Text>
-          </View>
-        </View>
+      <SafeAreaView>
+        <Human firstName="John" name="Doe" age={30}>
+          <Image
+            source={{
+              uri: "https://www.assuropoil.fr/wp-content/uploads/berger-australien.jpg",
+            }}
+            style={{ width: 200, height: 200 }}
+          />
+        </Human>
       </SafeAreaView>
     </SafeAreaProvider>
   );
